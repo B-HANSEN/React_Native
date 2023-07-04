@@ -15,11 +15,13 @@ export default function App() {
 	const [guessRounds, setGuessRounds] = useState(0);
 
 	const [fontsLoaded] = useFonts({
+		// useFonts hook to point to custom fonts
 		'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
 		'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
 	});
 
 	if (!fontsLoaded) {
+		// if fonts not yet loaded, show loading screen
 		return <AppLoading />;
 	}
 
@@ -34,7 +36,7 @@ export default function App() {
 	}
 
 	function startNewGameHandler() {
-		setUserNumber(null);
+		setUserNumber(null); // navigate back to start game screen
 		setGuessRounds(0);
 	}
 
@@ -58,14 +60,19 @@ export default function App() {
 
 	return (
 		<LinearGradient
-			colors={[Colors.primary700, Colors.accent500]}
+			colors={[Colors.primary700, Colors.accent500]} // can use 2 or more colors
 			style={styles.rootScreen}>
-			<ImageBackground
-				source={require('./assets/images/background.png')}
-				resizeMode='cover'
+			<ImageBackground // Image tag renders image in the foreground
+				source={require('./assets/images/background.png')} // point at it by requiring it
+				resizeMode='cover' // zoom in or out when size does not match with available space
 				style={styles.rootScreen}
-				imageStyle={styles.backgroundImage}>
-				<SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+				imageStyle={styles.backgroundImage} // radient to shine through the image, here only 15%. Gradient to be dominant
+			>
+				{/* consider notch: component to provide appropriate spacing depending on the device */}
+				<SafeAreaView style={styles.rootScreen}>
+					{/* render conditional screen  */}
+					{screen}
+				</SafeAreaView>
 			</ImageBackground>
 		</LinearGradient>
 	);
@@ -73,7 +80,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
 	rootScreen: {
-		flex: 1,
+		flex: 1, // takes up as much space as available
 	},
 	backgroundImage: {
 		opacity: 0.15,

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { StyleSheet, View, FlatList, Button } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, View, FlatList, Button } from 'react-native'; // unlike html-tags in React, RN elements need to be imported
+import { StatusBar } from 'expo-status-bar'; // use style prop to set for all pages
 
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
@@ -18,6 +18,7 @@ export default function App() {
 	}
 
 	function addGoalHandler(enteredGoalText) {
+		// update state with functional approach, to consider async updates of setState:
 		setCourseGoals(currentCourseGoals => [
 			...currentCourseGoals,
 			{ text: enteredGoalText, id: Math.random().toString() },
@@ -35,7 +36,7 @@ export default function App() {
 		<>
 			<StatusBar style='light' />
 			<View style={styles.appContainer}>
-				<Button
+				<Button // RN buttons cannot be styled, wrap with View component
 					title='Add New Goal'
 					color='#a065ec'
 					onPress={startAddGoalHandler}
@@ -47,7 +48,9 @@ export default function App() {
 				/>
 				<View style={styles.goalsContainer}>
 					<FlatList
-						data={courseGoals}
+						// RN does not share auto-scroll behaviour as browsers, need to use FlatList or ScrollView
+						// FlatList more performant for large lists, only loads what is currently shown
+						data={courseGoals} // use 'data, renderItem, keyExtractor' props instead of ScrollView map
 						renderItem={itemData => {
 							return (
 								<GoalItem
@@ -69,6 +72,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+	// in RN, styles do not cascade as they do in React
 	appContainer: {
 		flex: 1,
 		paddingTop: 50,

@@ -17,6 +17,7 @@ function MealDetailScreen({ route, navigation }) {
 	}
 
 	useLayoutEffect(() => {
+		// add icon to header
 		navigation.setOptions({
 			headerRight: () => {
 				return (
@@ -38,7 +39,7 @@ function MealDetailScreen({ route, navigation }) {
 				duration={selectedMeal.duration}
 				complexity={selectedMeal.complexity}
 				affordability={selectedMeal.affordability}
-				textStyle={styles.detailText}
+				textStyle={styles.detailText} // cascading styles to child component
 			/>
 			<View style={styles.listOuterContainer}>
 				<View style={styles.listContainer}>

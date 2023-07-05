@@ -4,10 +4,11 @@ import CategoryGridTile from '../components/CategoryGridTile';
 import { CATEGORIES } from '../data/dummy-data';
 
 function CategoriesScreen({ navigation }) {
+	// helper function
 	function renderCategoryItem(itemData) {
 		function pressHandler() {
 			navigation.navigate('MealsOverview', {
-				categoryId: itemData.item.id,
+				categoryId: itemData.item.id, // setup params object
 			});
 		}
 
@@ -25,7 +26,7 @@ function CategoriesScreen({ navigation }) {
 			data={CATEGORIES}
 			keyExtractor={item => item.id}
 			renderItem={renderCategoryItem}
-			numColumns={2}
+			numColumns={2} // 2 columns
 		/>
 	);
 }

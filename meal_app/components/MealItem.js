@@ -6,6 +6,7 @@ import {
 	StyleSheet,
 	Platform,
 } from 'react-native';
+// in contrast to route & navigation, useNAvigation can be used also in compnents other than screen components
 import { useNavigation } from '@react-navigation/native';
 
 import MealDetails from './MealDetails';
@@ -22,7 +23,7 @@ function MealItem({
 
 	function selectMealItemHandler() {
 		navigation.navigate('MealDetail', {
-			mealId: id,
+			mealId: id, // params object
 		});
 	}
 

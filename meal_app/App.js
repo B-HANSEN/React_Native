@@ -10,16 +10,18 @@ import MealsOverviewScreen from './screens/MealsOverviewScreen';
 import MealDetailScreen from './screens/MealDetailScreen';
 import FavoritesScreen from './screens/FavoritesScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator(); // exposes 2 properties: Navigator and Screen
 const Drawer = createDrawerNavigator();
 
 function DrawerNavigator() {
 	return (
+		// define drawer navigation
 		<Drawer.Navigator
 			screenOptions={{
+				// applied to all screens registered in this navigator
 				headerStyle: { backgroundColor: '#351401' },
 				headerTintColor: 'white',
-				sceneContainerStyle: { backgroundColor: '#3f2f25' },
+				sceneContainerStyle: { backgroundColor: '#3f2f25' }, // corresponds to contentStyle prop in stack navigation
 				drawerContentStyle: { backgroundColor: '#351401' },
 				drawerInactiveTintColor: 'white',
 				drawerActiveTintColor: '#351401',
@@ -30,9 +32,9 @@ function DrawerNavigator() {
 				component={CategoriesScreen}
 				options={{
 					title: 'All Categories',
-					drawerIcon: ({ color, size }) => (
-						<Ionicons name='list' color={color} size={size} />
-					),
+					drawerIcon: (
+						{ color, size } // default props
+					) => <Ionicons name='list' color={color} size={size} />,
 				}}
 			/>
 			<Drawer.Screen
@@ -52,8 +54,11 @@ export default function App() {
 	return (
 		<>
 			<StatusBar style='light' />
+			{/* define stack flow  */}
 			<NavigationContainer>
 				<Stack.Navigator
+					// can accept initial screen name by using a prop: e.g. initialRouteName="ProductDetails"
+					// if undefined, the first screen will be the default screen
 					screenOptions={{
 						headerStyle: { backgroundColor: '#351401' },
 						headerTintColor: 'white',

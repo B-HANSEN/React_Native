@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 		backgroundColor: GlobalStyles.colors.primary500,
 	},
 	flat: {
-		backgroundColor: 'transparent',
+		backgroundColor: 'transparent', // use mode prop: different button style, without a background color
 	},
 	buttonText: {
 		color: 'white',

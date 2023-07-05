@@ -79,7 +79,7 @@ export default function App() {
 							name='ManageExpense'
 							component={ManageExpense}
 							options={{
-								presentation: 'modal',
+								presentation: 'modal', // opens as a modal in iOS
 							}}
 						/>
 					</Stack.Navigator>

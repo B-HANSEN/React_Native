@@ -15,7 +15,7 @@ function expensesReducer(state, action) {
 		case 'SET':
 			const inverted = action.payload.reverse();
 			return inverted;
-		case 'UPDATE':
+		case 'UPDATE': // new array with old array plus one updated item:
 			const updatableExpenseIndex = state.findIndex(
 				expense => expense.id === action.payload.id
 			);

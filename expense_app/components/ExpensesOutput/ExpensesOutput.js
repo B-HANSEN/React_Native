@@ -5,7 +5,7 @@ import ExpensesList from './ExpensesList';
 import ExpensesSummary from './ExpensesSummary';
 
 function ExpensesOutput({ expenses, expensesPeriod, fallbackText }) {
-	let content = <Text style={styles.infoText}>{fallbackText}</Text>;
+	let content = <Text style={styles.infoText}>{fallbackText}</Text>; // case if there is no expenses listed
 
 	if (expenses.length > 0) {
 		content = <ExpensesList expenses={expenses} />;

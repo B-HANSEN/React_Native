@@ -15,7 +15,7 @@ function ManageExpense({ route, navigation }) {
 
 	const expensesCtx = useContext(ExpensesContext);
 
-	const editedExpenseId = route.params?.expenseId;
+	const editedExpenseId = route.params?.expenseId; // if there is an id in params, expense to edit, otherwise add
 	const isEditing = !!editedExpenseId;
 
 	const selectedExpense = expensesCtx.expenses.find(
@@ -23,6 +23,7 @@ function ManageExpense({ route, navigation }) {
 	);
 
 	useLayoutEffect(() => {
+		// avoid flickering which would occur with useEffect
 		navigation.setOptions({
 			title: isEditing ? 'Edit Expense' : 'Add Expense',
 		});
@@ -33,7 +34,7 @@ function ManageExpense({ route, navigation }) {
 		try {
 			await deleteExpense(editedExpenseId);
 			expensesCtx.deleteExpense(editedExpenseId);
-			navigation.goBack();
+			navigation.goBack(); // close and navigate back to previous screen
 		} catch (error) {
 			setError('Could not delete expense - please try again later!');
 			setIsSubmitting(false);

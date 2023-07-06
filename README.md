@@ -2,14 +2,14 @@
 
 Small React Native projects to show commonly used features.
 
-## Goals App
+## 1-Goals App
 
 - Components: core components like ScrollView, FlatList, Pressable
 - Styling: Flexbox, ripple effects
 - Event handling, modals
 - Interactivity, local state handling
 
-## Game App
+## 2-Game App
 
 - Components: inputs (number, text), buttons, icons, alert dialogs, SafeAreaView, KeyboardAvoidingView
 - useWindowDimensions() hook
@@ -18,7 +18,7 @@ Small React Native projects to show commonly used features.
 - Styling: gradients, images, managing colors globally, 'cascading' styles, custom fonts, dynamic widths
 - Basic navigation
 
-## Meals App
+## 3-Meals App
 
 - Advanced navigation concepts (stack, drawers, tabs), default screen, route params, drawer component, button tabs, nesting navigators
 - Conditional rendering of header buttons
@@ -27,7 +27,7 @@ Small React Native projects to show commonly used features.
 - useContext() hook
 - Styling: display items in a grid
 
-## Expense Tracker App
+## 4-Expense Tracker App
 
 - Navigation: bottom tabs
 - Components: Forms with input validation, Modals

@@ -14,18 +14,18 @@ function AuthContextProvider({ children }) {
 
 	function authenticate(token) {
 		setAuthToken(token);
-		AsyncStorage.setItem('token', token);
+		AsyncStorage.setItem('token', token); // AsyncStorage: store token on device to avoid re-logging in when user closes app
 	}
 
 	function logout() {
-		setAuthToken(null);
+		setAuthToken(null); // clear token when logging out
 		AsyncStorage.removeItem('token');
 	}
 
 	const value = {
 		token: authToken,
 		isAuthenticated: !!authToken,
-		authenticate: authenticate,
+		authenticate: authenticate, // point to function and make it available anywhere in the app
 		logout: logout,
 	};
 

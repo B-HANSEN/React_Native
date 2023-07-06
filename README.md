@@ -33,5 +33,15 @@ Small React Native projects to show commonly used features.
 - Components: Forms with input validation, Modals
 - State management: createContext() hook
 - HTTP: REST API with axios (GET, PUT, DELETE, POST), connect to Firebase database
-- Loading & error states
+- Loading and error handling
 - Date formatting
+
+## 5-Authentication App
+
+- Authentication using Firebase Auth REST API
+- Authentication requests to backend, token handling
+- Screen protection
+- Storing auth tokens on device
+- Loading and error handling
+- Stack navigation
+- State management: createContext() hook

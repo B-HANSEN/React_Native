@@ -11,7 +11,7 @@ function RecentExpenses() {
 	const [isFetching, setIsFetching] = useState(true);
 	const [error, setError] = useState();
 
-	const expensesCtx = useContext(ExpensesContext);
+	const expensesCtx = useContext(ExpensesContext); // useContext to avoid fetching updated state from the backend again
 
 	useEffect(() => {
 		async function getExpenses() {

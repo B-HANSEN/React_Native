@@ -50,10 +50,10 @@ function ManageExpense({ route, navigation }) {
 		try {
 			if (isEditing) {
 				expensesCtx.updateExpense(editedExpenseId, expenseData);
-				await updateExpense(editedExpenseId, expenseData);
+				await updateExpense(editedExpenseId, expenseData); // awaiting actually redundant, as response will not be handled; keep for completeness sake: only close modal after updating DB completed
 			} else {
-				const id = await storeExpense(expenseData);
-				expensesCtx.addExpense({ ...expenseData, id: id });
+				const id = await storeExpense(expenseData); // update database
+				expensesCtx.addExpense({ ...expenseData, id: id }); // simultaneously update context so as to save new expense and not require to fetch again updated state
 			}
 			navigation.goBack();
 		} catch (error) {

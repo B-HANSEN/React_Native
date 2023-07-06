@@ -6,7 +6,13 @@
 
 ## Meals App
 
-handle navigation
-handle state with context or redux
+- Navigation
+- State management with context or redux
 
 ## Expense Tracker App
+
+- Navigation with bottom tabs
+- Forms
+- Input with validation
+- Modals
+- Date formatting

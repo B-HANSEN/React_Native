@@ -10,7 +10,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
 	const [inputs, setInputs] = useState({
 		amount: {
 			value: defaultValues ? defaultValues.amount.toString() : '',
-			isValid: true,
+			isValid: true, // set to true to not show formIsInvalid text at the beginning, then later run validation
 		},
 		date: {
 			value: defaultValues ? getFormattedDate(defaultValues.date) : '',

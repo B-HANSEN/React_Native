@@ -6,11 +6,13 @@ function Input({ label, invalid, style, textInputConfig }) {
 	const inputStyles = [styles.input];
 
 	if (textInputConfig && textInputConfig.multiline) {
+		// for desc field, there is a multiline prop
+		// provide array of styles to TextInput
 		inputStyles.push(styles.inputMultiline);
 	}
 
 	if (invalid) {
-		inputStyles.push(styles.invalidInput);
+		inputStyles.push(styles.invalidInput); // show different styling for a field when invalid
 	}
 
 	return (

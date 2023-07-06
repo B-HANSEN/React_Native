@@ -2,7 +2,7 @@
 
 Small React Native projects to show commonly used features.
 
-## Basics (Goals App)
+## Goals App
 
 - Components: core components like ScrollView, FlatList, Pressable
 - Styling: Flexbox, ripple effects
